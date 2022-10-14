@@ -1,99 +1,40 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Hexo</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Hexo"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Hexo"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="Hexo"><meta property="og:url" content="http://example.com/"><meta property="og:site_name" content="Hexo"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://example.com/img/og_image.png"><meta property="article:author" content="John Doe"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://example.com/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com"},"headline":"Hexo","image":["http://example.com/img/og_image.png"],"author":{"@type":"Person","name":"John Doe"},"publisher":{"@type":"Organization","name":"Hexo","logo":{"@type":"ImageObject","url":"http://example.com/img/logo.svg"}},"description":""}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
 
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+          const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
+          if (!$tabMenu) {
+            return;
+          }
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
 
-  
-<meta name="generator" content="Hexo 6.3.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/10/14/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2022-10-14T15:05:00.399Z" itemprop="datePublished">2022-10-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/10/14/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(location.hash);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="Hexo" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item is-active" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-10-14T15:49:02.000Z" title="2022/10/14 23:49:02">2022-10-14</time>发表</span><span class="level-item"><time dateTime="2022-10-14T16:05:39.561Z" title="2022/10/15 00:05:39">2022-10-15</time>更新</span><span class="level-item">5 分钟读完 (大约793个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/10/14/H%E5%9C%A8%E6%B8%85%E5%8D%8E%E8%AF%BB%E7%A1%95%E7%9A%84%E6%97%A5%E5%AD%90-day52/">H在清华读硕的日子 day52</a></h1><div class="content"><p>x</p>
+<p>今天是一周的最后一天了，相对轻松的一天，虽然是从早八开始。早上老师检查了上周的论文introduction阅读与批注情况，H是昨晚九点多才匆匆忙忙弄得，与旁边同学相比发现真是水极了，不过还好老师也没怎么细查。之后做了一个托福的听力，H发现自己的听力水平着实有点下降，虽然听得过程中还算能听懂，但是关键信息都由于一些不懂的词汇导致没get到，感觉英文水平还是有待提高，这样才有出国的可能啊。</p>
+<p>之后H去上了自动机的课程，有一说一，M老师讲课还是非常认真的，可能是课程内容不太吸引人吧，导致没什么人上。上课过程中还发生了一些小插曲，昨天晚上Y老师本来约了早上的腾讯会议与企业谈勒索病毒防护的合作项目，结果H忘了请假了，不过也还好事情不太大，J学长和W同学都在线，H也通过W同学的记录了解了开会沟通的一些内容，不至于处于一种懵逼的状态。</p>
+<p>中午和R同学一起去吃了午饭，R同学是清本升上来的同学，H也从R同学那儿了解到了一些故事，比如说M老师的本科课程很硬核，会挂人之类的，还了解了下Y老师（和H的导师Y老师同办公室的另一个Y老师）在系统所的不得志的地位等等。</p>
+<p>下午开大组会就很轻松了，今天是Z学长做了关于测试evaluation的报告，同时还介绍了他的突出工作wingfuzz，wingfuzz最近在google的fuzzbench的评比中击败了众多主流的fuzzer，一骑绝尘拿下第一，看得出来Y老师对这个结果甚是满意，是啊，人呐，总是得在某些地方出一口气，让别人见识到自己的厉害才行。话说回来，通过Z学长的介绍，H了解到了当前主流的工作中存在的众多不合理的地方，既然近年来的工作其实都成效不明显，那也表明这个领域还是大有可为的，希望H所在的团队能够成为下一个fuzz高潮中领先的团队吧。</p>
+<p>下午开完组会后，H急匆匆地去帮Q解决了作业，概率论呐，仍然是非常棘手的问题。而且还了解到Q的队友特别坑爹，本来的分工是3:3:4，结果队友都不干活，最后变成1:1:8，Q完成8的工作量，真是坑爹，希望之后队友能给力吧，不给力的话也别给她们面子了。</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-10-14T15:05:00.399Z" title="2022/10/14 23:05:00">2022-10-14</time>发表</span><span class="level-item"><time dateTime="2022-10-14T15:05:00.399Z" title="2022/10/14 23:05:00">2022-10-14</time>更新</span><span class="level-item">1 分钟读完 (大约123个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/10/14/hello-world/">Hello World</a></h1><div class="content"><p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
@@ -106,102 +47,84 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-10-13T03:08:00.000Z" title="2022/10/13 11:08:00">2022-10-13</time>发表</span><span class="level-item"><time dateTime="2022-10-13T15:52:39.983Z" title="2022/10/13 23:52:39">2022-10-13</time>更新</span><span class="level-item">5 分钟读完 (大约782个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/10/13/H%E5%9C%A8%E6%B8%85%E5%8D%8E%E8%AF%BB%E7%A1%95%E7%9A%84%E6%97%A5%E5%AD%90-day51/">H在清华读硕的日子 day51</a></h1><div class="content"><p>今天又是个忙得不可开交的一天，早晨起早去了图书馆，今天H又抢到了单人豪华雅座，不过其实发现那个地方也不太好，网络不好呀，不过非常适合静下心来学习，可能对于学数学啥的人来说更适合把，拍张照片纪念一下。</p>
+<img src="C:\Users\gary\AppData\Roaming\Typora\typora-user-images\image-20221013233956920.png" alt="image-20221013233956920" style="zoom: 25%;" />
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/10/14/hello-world/" data-id="cl98mgsbg0000mct73hu5cux4" data-title="Hello World" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
+<p>早上花了一个多小时才写完了自动机的最后一个作业，这就是上节课没好好听课的后果，一个简化的DFA的题目写了好久，看来以后还是得好好听课。</p>
+<p>写完作业后去上了数学课，今天讲完了共轭梯度法，然后布置了新的作业，然后开始讲非线性方程组的求解了。压力山大，不过还好每次开新的篇章的时候都还比较简单，只是越到后面越复杂起来。</p>
+<p>中午开了团日活动，班级讨论了七名同学成为入党积极分子的相关事宜，看起来全国9000多万党员的数量还在继续茁壮成长着。会议中有个环节是每个同学进行自我评述，虽然说这可能是个比较走过场的流程，但是H觉得大家都还是讲得各有特点，让H最印象深刻是有人谈到要从“历史与制度”的方面来理解我们党，H觉得说的非常有道理，我们看事情的眼光一定要放得长远，一件事情的对与错，有时候可能不是因为某个人某个集体或某项制度造成的，而可能是历史发展所必然经历的，例如环境污染，八大公害等等，既然历史最终可能会导致这些事情的发生，我们应当坦然接受，并且尽力去弥补便是了，过多的无用的指责只会是浪费时间而已。除此之外，我们还必须认识到，历史既然会在某个特定的时间做出适当的选择，那么也会在某个时间抛弃掉不适合的选择，因此，顺应历史是任何事情得以长期存活下去的根本，世界上的每个人，每个团体，每项制度都应该清醒的认识到这一点，在成长中存活，才是唯一长久的出路。</p>
+<p>晚上Y舍友请了大家去吃翘脚牛肉，very delicious，顺便还吃了五道口那边的枣糕王，挺不错的，等H感冒好了还要多吃点美食。</p>
+<p>晚上一直在赶勒索软件相关的事情，明天Y老师要去和企业谈合作了，希望能顺利吧，让H的研究能够更加的实在，同时有个依托也能够发展得更顺利些。</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-10-12T03:08:00.000Z" title="2022/10/12 11:08:00">2022-10-12</time>发表</span><span class="level-item"><time dateTime="2022-10-12T15:56:49.421Z" title="2022/10/12 23:56:49">2022-10-12</time>更新</span><span class="level-item">6 分钟读完 (大约932个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/10/12/H%E5%9C%A8%E6%B8%85%E5%8D%8E%E8%AF%BB%E7%A1%95%E7%9A%84%E6%97%A5%E5%AD%90-day50/">H在清华读硕的日子 day50</a></h1><div class="content"><p>今天早上开了小组的组会，组会前H听到了一些关于组里的消息，昨天Y老师还所组里有个同学中了EMSOFT的Best Paper，结果今天又被其他人给抢走了，太遗憾了，也不知道究竟是什么原因导致的，不过真的有点气人，希望大家再振作起来，下次再把荣誉夺回来。早上的组会H报告了自己关于勒索软件防御的新的想法，老师觉得也还可以吧，接下来要认真推进了，希望能做出点成果来吧。早上还听闻了一些关于Y老师的消息，Y老师似乎被人针对了，组里的19年，也就是3年前的论文都被人揪出来有问题，正好也听说Y老师下半年就要晋升为长聘副教授，其中的争斗也真是令人唏嘘，明明是做学术的事情，追求科学与真理的行业，居然被搅得这样，叫真正的学者如何能够真心留在这里，留下来的人又有多少人能保持住他们的真心。</p>
+<p>中午吃饭的时候Y老师发了一条新闻，说是今年的诺贝尔经济学奖得主Philip H. Dybvig于前两年被西南财大因为考核不过关而开除了，很多人在说是不是中国的制度有问题，其实H觉得也不然，这件事情对于公众来说有点不透明的，公众看到的表象是他获得了诺贝尔奖，并且从西南财大离开，但是并没有详细地说明他对西南财大的贡献究竟如何，究竟是我们的制度出了问题呢，还是他确实因为平常身在国外导致对学院并不十分上心呢，对于这种事情希望还是有个深入的了解后再做出评判，而不是无脑吐槽啊，因为H也不太了解个中缘由，所以也无法下定论。</p>
+<p>下午H上了新中特，又是批判西方资本主义的爽课，听得也很开心，不过其中的某些问题，其实很渐渐在我们国家显现出来了，H感受比较突出的是贫富差距的加大，发达城市和一般城市，甚至在同一城市内部的不同层级的人群之间的贫富差距都已经到了比较大的地步，倘若这持续发展下去肯定会出现问题的，希望国家会及时站出来解决这些问题吧，社会稳定还是社会大部分人民能够美好生活的基础。</p>
+<p>晚上H去了研团大‘V’开会，接了个清扫实验室的志愿活动，推行起来估计是有点挑战的呢，希望能和W同学一起办好，看看怎么想些比较好的点子吸引大家进来呢。</p>
+<p>开会结束后，H去了图书馆，不得不说清华的图书馆确实挺不错的，很有学习的氛围，今天做了点自动机的作业，然后还帮Q看了看起来很复杂的金融数学题，虽然很难不过也还算是有点意思，不过要是H的知识储备更多点，能够知道题目想表达的这是含义就好了。</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-10-11T03:08:00.000Z" title="2022/10/11 11:08:00">2022-10-11</time>发表</span><span class="level-item"><time dateTime="2022-10-11T15:49:18.852Z" title="2022/10/11 23:49:18">2022-10-11</time>更新</span><span class="level-item">6 分钟读完 (大约897个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/10/11/H%E5%9C%A8%E6%B8%85%E5%8D%8E%E8%AF%BB%E7%A1%95%E7%9A%84%E6%97%A5%E5%AD%90-day49/">H在清华读硕的日子 day49</a></h1><div class="content"><p>今天又是早八的一天，早上刚起床H还是精神满满，第一节课上了数学课，今天倒是讲了一些很不错的东西，讲了最速下降法和共轭梯度法来求解线性方程组，一是这玩意可能在别的课上也听得比较多了所以比较熟悉，二来这些玩意在讲解过程中展现出了非常神奇的性质，所以H觉得很感兴趣，这些都是数学家们的思想结晶啊，他们让计算的效率不知道提高了多少倍，也不知道将多少仅存于理论中的应用化为现实中造福人类的应用，比如深度学习。</p>
+<p>第二节课就上了深度学习，这两节课都是在讲各种CNN的网络结构，说实话听得很累人，两个多小时的时间基本上是走马观花式地将不同的网络结构过了一遍，虽然S老师讲课非常流畅并且也很有激情，但是东西实在是太多了，而且这东西看起来并没有太多很solid的理论支撑，大多是凭借经验总结而来，所以看起来也只能尽量依靠记忆记下来了。一个上午的课可谓是非常的工科了，这些学科都基于一定的理论基础，但是碍于工程实践上的约束又不得不采取一些折中的办法来权衡理想与现实之间的差距，不过在其中追求性能极限的思想还是很吸引H的，其实人类活在这世上就是这样，理想与现实之间总存在着一条鸿沟，我们不过是尽力让生活能够贴上我们的理想罢了，即使无法完全成功，但是努力慢慢靠近的过程就足以让人享受。</p>
+<p>也不知道是感冒还没好还是早上起太早还是上课太无聊还是天气到中午过于炎热，H在上深度学习的第三小节的课的时候就已经心不在焉了，很饿，很热，很困，吃完午饭后立马睡觉，本来下午还想着去图书馆的，结果直接睡到了三点，只得随便看了点论文。</p>
+<p>下午四点半到六点半去乐团那边上小课了，老师是来自国交的sihua老师，老师长得好看，人也好，当然技术也好，带着大家排了威风堂堂和西二四，一开始只有H和Y同学到了，一对二的场面着实气氛有点尴尬，更甚的是H的技术还听不咋地，不过也获得了慢慢找音的机会，中间总会有适应的过程嘛，希望H能越练越好吧。</p>
+<p>晚上又是Y老师的水课，说实话课堂的氛围很尴尬，主要是Y老师挺喜欢冷不丁地提个问题，但是下方众人几乎都没有反应，H也为Y老师赶到尴尬，更麻烦的是，因为是Y老师组里的学生，每当点名的时候H都只敢低着头，万万不敢与老师对视，生怕下一秒就被cue到。</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-10-10T03:08:00.000Z" title="2022/10/10 11:08:00">2022-10-10</time>发表</span><span class="level-item"><time dateTime="2022-10-10T16:00:16.045Z" title="2022/10/11 00:00:16">2022-10-11</time>更新</span><span class="level-item">3 分钟读完 (大约497个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/10/10/H%E5%9C%A8%E6%B8%85%E5%8D%8E%E8%AF%BB%E7%A1%95%E7%9A%84%E6%97%A5%E5%AD%90-day48/">H在清华读硕的日子 day48</a></h1><div class="content"><p>今天又是新的一周了，早上H去图书馆赶英语essay，今天挑选了一个雅座，可惜没有拍到照片，就是一个单独的隔间，位置很安静，隐私性很好，有电源还有一块可供擦写的白板，可谓是自习的最佳去处，以后去得早就准备抢那些位置了。</p>
+<p>晚上H上了应用密码学，不知道是不是因为上课后多看了一眼手机，H就被B老师点起来提问上节课讲的扩展的欧几里得算法是为了实现什么，H脑海里简直一篇空白，普通的欧几里得算法知道，平衡的欧几里得算法也知道，唯独这个扩展的欧几里得算法因为太复杂了之前没搞明白而不知道，虽然坐在前面的W同学轻声提示了下，但还是没能想到它的全貌，只能勉强回答是为了求bezout系数，那尴尬的场景简直让H难以忘怀，以后还是得“温故而知新”了。</p>
+<p>今天H终于赶完了英语的essay，简单的分析了一下美国的新教和中国的儒教之间的区别以及对人们价值观产生的影响，感觉写这些能够想一些自己的想法还是不错的，但是poor的英文表达能力还是让这篇东西写了好久才挤牙膏式地写完。</p>
+<p>这两天H静下心来学习了比较长的时间，说实话对知识的获取感到很开心，或许知识的海洋才是H的归宿？希望H能继续对所有的知识都保有这样的兴趣与激情吧，然后在之后的研究中发挥出知识的作用。</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-10-09T03:08:00.000Z" title="2022/10/9 11:08:00">2022-10-09</time>发表</span><span class="level-item"><time dateTime="2022-10-10T15:50:52.369Z" title="2022/10/10 23:50:52">2022-10-10</time>更新</span><span class="level-item">2 分钟读完 (大约329个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/10/09/H%E5%9C%A8%E6%B8%85%E5%8D%8E%E8%AF%BB%E7%A1%95%E7%9A%84%E6%97%A5%E5%AD%90-day47/">H在清华读硕的日子 day47</a></h1><div class="content"><p>今天H几乎学了一天，白天一直在写数学的编程题，其实感觉还挺有意思的，通过实现对这些算法了解得更加深入了，运行得到结果的那一刻也是非常兴奋与激动的！</p>
+<p>晚上因为病了请假没去乐团排练，当然其中也还有因为作业写不完的原因，之后还是要抓紧时间啊，不然这学期很快就会过去了。</p>
+<p>今天H看了《看天下》中关于阿尔兹海默症的文章，感觉读来非常的沉重，失忆的老人不知道会给一个家庭带来多大的打击，社会确实亟需对老年人给予更多的关注了，尤其是到H这一代独生子女成长起来后，这是上有老下有小而中午兄弟姐妹的一代，养老的福利能否跟上，很大程度上将会影响到这一代人的生活压力。不过从另一个角度想，这可能也是下一个契机所在，专门针对老年人而定制化的一些商品与服务，或许将在未来10-20年内迎来一波高潮。</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-10-08T03:08:00.000Z" title="2022/10/8 11:08:00">2022-10-08</time>发表</span><span class="level-item"><time dateTime="2022-10-08T16:00:53.973Z" title="2022/10/9 00:00:53">2022-10-09</time>更新</span><span class="level-item">3 分钟读完 (大约492个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/10/08/H%E5%9C%A8%E6%B8%85%E5%8D%8E%E8%AF%BB%E7%A1%95%E7%9A%84%E6%97%A5%E5%AD%90-day46/">H在清华读硕的日子 day46</a></h1><div class="content"><p>今天早上H原本想去校医院看看喉咙痛，结果在进门量体温的时候居然达到了37.5℃，发烧了！然后没办法按照一般的流程看急诊，被转去了发热门诊，做了抽血、核酸（抗原检测+鼻拭子）、CT，还好医生护士们的态度都听耐心的，可能因为这是清华校内的原因吧，所幸检查下来没什么事，开了点药就回去了。H感觉还挺幸运的是有公费医疗承担了这次开销，一共可是6、700的开销呢，其中以CT为重，不敢想象，倘若国家真的完全放开后，普通百姓是否能够有能力承担这样的诊疗费用。</p>
+<p>因为早上发热了，原本下午和党支部一起出去看《万里归途》的计划也泡汤了，只得认真写作业，下午直接去了图书馆逸夫楼，H愈发觉得那里真是一个好地方，很安静，很有学习的氛围，今天也基本写完了数学，还有上机题留到明天。今天还帮Q看了很多数学题，感觉都挺有意思的，不过难度还是有点高呢。</p>
+<p>最近节后时期，疫情又开始反复了，真心希望人们能够自觉一点，多一点社会责任感，让医护人员少一点负担吧，H感觉这个世界上真的有太多的人没有什么社会责任感了，可以说将人的自私性体现得非常明显，丝毫没有考虑自己的行为的后果，希望这种人能少一点吧，如果他们无法改善，那就以强力的外力使其步入正轨。</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-10-07T03:08:00.000Z" title="2022/10/7 11:08:00">2022-10-07</time>发表</span><span class="level-item"><time dateTime="2022-10-08T15:52:08.878Z" title="2022/10/8 23:52:08">2022-10-08</time>更新</span><span class="level-item">4 分钟读完 (大约542个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/10/07/H%E5%9C%A8%E6%B8%85%E5%8D%8E%E8%AF%BB%E7%A1%95%E7%9A%84%E6%97%A5%E5%AD%90-day45/">H在清华读硕的日子 day45</a></h1><div class="content"><p>今天真的是一个super busy day！今天早上满课，H上了英语课和自动机，英语课讲了一些英文论文的introduction的一般结构，说实话认真听的话感觉也是有些道理的，H不禁在想，要是全天下的人写论文的时候都能按照这么规范的方式就好了啊，那样读论文的人可就轻松了，不过从写论文的角度人来想，这种条条框框有时候实在难以满足，可能自己想要表达就不是按照这样的逻辑架构呢？看来没办法，还是得想办法跟上论文作者的思路才行呀。上自动机课的时候可谓是有喜有悲，喜的是之前的信息可视化课程居然有人来找H组队了，估计是因为作业写不完打算退课的，这下子H的队伍就齐人啦。悲的是上课的时候H发现这次作业喜提85，以往都是100，可惜了，本来还想一直都100的，这次的一大原因是相信了网上的答案，结果网上的答案居然是错的。。。真的麻了，吃一堑长一智，以后还是要自己认真做才行呐。</p>
+<p>下午开始H开始了造火箭计划，今日计划为建造一篇5000字的survey。一直紧赶慢赶，终于在晚上11点左右的时候结束了，真是太刺激了。中间虽然很痛苦，但是中间读到了一篇文章感觉很震撼，感觉科研的世界非常充满想象力，是一个非常自由的地方，H突然很向往那个地方了，甚至时不时在幻想自己前往美国读个博士。可能想太远了，还是继续做好当下的事情再往后看吧！</p>
+<p>不过嘛，人生确实还是要有提前规划，算是先确立一个方向吧。</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-10-06T03:08:00.000Z" title="2022/10/6 11:08:00">2022-10-06</time>发表</span><span class="level-item"><time dateTime="2022-10-07T15:20:13.055Z" title="2022/10/7 23:20:13">2022-10-07</time>更新</span><span class="level-item">3 分钟读完 (大约404个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/10/06/H%E5%9C%A8%E6%B8%85%E5%8D%8E%E8%AF%BB%E7%A1%95%E7%9A%84%E6%97%A5%E5%AD%90-day44/">H在清华读硕的日子 day44</a></h1><div class="content"><p>今天H仍然十分难受，深受喉咙痛的影响，话也说不好，晚上睡觉估计能上个五六次厕所，不过神奇的是，不管几点去上厕所，貌似都能碰到人，这就神奇了，大家的作息也是听不规律啊。</p>
+<p>晚上顶着明天的ddl还是去参加了研团的第一次全体会议，大概了解了研团的架构，认识了一些人吧，但后面的桌游也没参与，似乎也没有进行太多实质性的活动，就简单放一张合照吧。</p>
+<img src="https://gary-pic.oss-cn-guangzhou.aliyuncs.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20221006213947.jpg" alt="微信图片_20221006213947" style="zoom: 25%;" />
 
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/10/14/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+<p>昨天在研团开会的那间办公室里，看到了墙上钉着的几个字，觉得非常有道理，“教学立院”。说实话这个又牵扯到大学的老师究竟应该是科研能力重要还是教学能力重要这个问题上了，H觉得身为人师，会教一定是更重要的，就算是做科研也是一样，古有云，”授人以鱼不如授人以渔“，难道做科研厉害的导师不也是能够将自己的科研能力传递给后面的学生吗，这也是需要一种”教“的能力啊，更不用说对于刚进入大学的本科生而言了，他们也无需科研，更多的是需要汲取新的知识来提升自己的能力，这时候，会教学就显得额外重要了。</p>
+</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous is-invisible is-hidden-mobile"><a href="/page/0/">上一页</a></div><div class="pagination-next"><a href="/page/2/">下一页</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link is-current" href="/">1</a></li><li><a class="pagination-link" href="/page/2/">2</a></li><li><span class="pagination-ellipsis">&hellip;</span></li><li><a class="pagination-link" href="/page/6/">6</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/colahua.jpg" alt="Mr.H"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Mr.H</p><p class="is-size-6 is-block">SE Graduate, Tsinghua University</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Beijing, China</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">53</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">0</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/GaryHua226" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/GaryHua226"><i class="fab fa-github"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-10-14T15:49:02.000Z">2022-10-14</time></p><p class="title"><a href="/2022/10/14/H%E5%9C%A8%E6%B8%85%E5%8D%8E%E8%AF%BB%E7%A1%95%E7%9A%84%E6%97%A5%E5%AD%90-day52/">H在清华读硕的日子 day52</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-10-14T15:05:00.399Z">2022-10-14</time></p><p class="title"><a href="/2022/10/14/hello-world/">Hello World</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-10-13T03:08:00.000Z">2022-10-13</time></p><p class="title"><a href="/2022/10/13/H%E5%9C%A8%E6%B8%85%E5%8D%8E%E8%AF%BB%E7%A1%95%E7%9A%84%E6%97%A5%E5%AD%90-day51/">H在清华读硕的日子 day51</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-10-12T03:08:00.000Z">2022-10-12</time></p><p class="title"><a href="/2022/10/12/H%E5%9C%A8%E6%B8%85%E5%8D%8E%E8%AF%BB%E7%A1%95%E7%9A%84%E6%97%A5%E5%AD%90-day50/">H在清华读硕的日子 day50</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-10-11T03:08:00.000Z">2022-10-11</time></p><p class="title"><a href="/2022/10/11/H%E5%9C%A8%E6%B8%85%E5%8D%8E%E8%AF%BB%E7%A1%95%E7%9A%84%E6%97%A5%E5%AD%90-day49/">H在清华读硕的日子 day49</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/10/"><span class="level-start"><span class="level-item">十月 2022</span></span><span class="level-end"><span class="level-item tag">15</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/09/"><span class="level-start"><span class="level-item">九月 2022</span></span><span class="level-end"><span class="level-item tag">29</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/08/"><span class="level-start"><span class="level-item">八月 2022</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li></ul></div></div></div><!--!--><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="Hexo" height="28"></a><p class="is-size-7"><span>&copy; 2022 John Doe</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
